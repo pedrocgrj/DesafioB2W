@@ -60,4 +60,10 @@ public class PlanetaResource {
 		obj = service.update(obj);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@RequestMapping(value="/nome/{nome}", method=RequestMethod.GET)
+	public ResponseEntity<Planeta> find(@PathVariable String nome) {
+		Planeta obj = service.findByNome(nome);
+		return ResponseEntity.ok().body(obj);
+	}
 }
