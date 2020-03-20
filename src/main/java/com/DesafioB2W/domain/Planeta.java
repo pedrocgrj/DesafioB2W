@@ -2,9 +2,14 @@ package com.DesafioB2W.domain;
 
 import java.io.Serializable;
 
-public class Planeta implements Serializable{
-	
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="planeta")
+public class Planeta implements Serializable{	
 	private static final long serialVersionUID = 1L;
+	
+	@Id
 	private String id;
 	private String nome;
 	private String clima;
