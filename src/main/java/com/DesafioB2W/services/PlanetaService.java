@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.DesafioB2W.domain.Planeta;
+import com.DesafioB2W.dto.PlanetaDTO;
 import com.DesafioB2W.repository.PlanetaRepository;
 import com.DesafioB2W.services.exception.ObjectNotFoundException;
 
@@ -25,5 +26,12 @@ public class PlanetaService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Planeta não encontrado"));
 	}
 	
+	public Planeta insert(Planeta obj) {
+		return repo.insert(obj);
+	}
+	
+	public Planeta fromDTO(PlanetaDTO objDto) {
+		return new Planeta(objDto.getId(), objDto.getNome(),objDto.getClima(), objDto.getTerreno());
+	}
 	
 }

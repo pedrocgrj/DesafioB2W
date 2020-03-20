@@ -13,7 +13,7 @@ public class PlanetaDTO implements Serializable{
 	private String clima;
 	private String terreno;
 	
-	public PlanetaDTO(Optional<Planeta> obj) {	
+	public PlanetaDTO() {	
 	}
 	
 	public PlanetaDTO(Planeta obj) {
