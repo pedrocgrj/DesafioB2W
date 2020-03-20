@@ -30,6 +30,12 @@ public class PlanetaService {
 		return repo.insert(obj);
 	}
 	
+	public void delete(String id) {
+		findById(id);
+		repo.deleteById(id);
+		
+	}
+	
 	public Planeta fromDTO(PlanetaDTO objDto) {
 		return new Planeta(objDto.getId(), objDto.getNome(),objDto.getClima(), objDto.getTerreno());
 	}
