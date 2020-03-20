@@ -36,6 +36,18 @@ public class PlanetaService {
 		
 	}
 	
+	public Planeta update(Planeta obj) {
+		Planeta newObj = findById(obj.getId());
+		updateData(newObj, obj);
+		return repo.save(newObj);
+	}
+
+	private void updateData(Planeta newObj, Planeta obj) {
+		newObj.setNome(obj.getNome());
+		newObj.setClima(obj.getClima());
+		newObj.setTerreno(obj.getTerreno());
+	}
+	
 	public Planeta fromDTO(PlanetaDTO objDto) {
 		return new Planeta(objDto.getId(), objDto.getNome(),objDto.getClima(), objDto.getTerreno());
 	}
