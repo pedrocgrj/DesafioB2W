@@ -1,6 +1,7 @@
 package com.DesafioB2W.dto;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import com.DesafioB2W.domain.Planeta;
 
@@ -12,7 +13,7 @@ public class PlanetaDTO implements Serializable{
 	private String clima;
 	private String terreno;
 	
-	public PlanetaDTO() {	
+	public PlanetaDTO(Optional<Planeta> obj) {	
 	}
 	
 	public PlanetaDTO(Planeta obj) {
